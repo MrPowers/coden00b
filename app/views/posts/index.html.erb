@@ -1,0 +1,6 @@
+<ol>
+<% @posts.each do |post| %>
+	<li><%= link_to post.title, post.url %></li>	
+	<p class="subtext">Posted by <%= post.user[:name] %> <%= time_ago_in_words(post.updated_at) %> ago | <%=link_to "#{post.comments.count} #{comments(post)}", post %></p>
+<% end %>
+</ol>

@@ -1,0 +1,14 @@
+<%= form_for comment do |f| %>
+	<%= f.label :body %> <br />
+	<%= f.text_field :body %> <br /> <br />
+
+	<%= f.hidden_field :user_id, :value => current_user.id %>
+
+	<% if comment %>
+		<%= f.submit "Update Comment" %>
+	<% else %>
+		<%= f.submit "Submit" %>
+	<% end %>
+
+<% end %>
+

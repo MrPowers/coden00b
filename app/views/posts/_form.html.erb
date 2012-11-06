@@ -1,0 +1,15 @@
+<%= form_for @post do |f| %>
+	<p class="para">Post title</p> 
+	<p><%= f.text_field :title, size: 60 %></p>
+
+	<p class="para">url</p>
+	<p><%= f.text_field :url, size: 60 %></p>
+
+	<%= f.hidden_field :user_id, :value => current_user.id %>
+
+	<div class="button"><% if @post.id %>
+			<%= f.submit "Update Post" %>	
+		<% else %>
+			<%= f.submit "Submit" %>
+		<% end %></div>
+<% end %>

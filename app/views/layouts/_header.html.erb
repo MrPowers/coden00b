@@ -1,0 +1,11 @@
+<div class="header">
+	<h1 class="title"><%= link_to "hackern00b", root_path %></h1>
+	<p class="links"><%= link_to "new post", new_post_path %>  |  <%= link_to "comments", comments_path %></p>
+	<p class="login">
+		<% if current_user %>
+			<%= current_user.name %> | <%= link_to "sign out", destroy_user_session_path %>
+		<% else %>
+			<%= link_to "sign up", new_user_registration_path %>  |  <%= link_to "sign in", new_user_session_path %>
+		<% end %>
+	</p>
+</div> <!-- end header -->

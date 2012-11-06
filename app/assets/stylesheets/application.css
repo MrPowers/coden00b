@@ -1,0 +1,143 @@
+/*************
+CSS Resets
+*************/
+h1, h2, h3, h4, h5, h6, p, ul, ol, li {
+	margin: 0;
+	padding: 0;
+	font-size: 10pt;
+	line-height: 100%;
+	font-family: Verdana, sans-serif;
+} 
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+
+
+
+
+/*************
+HEADER
+*************/
+.header {
+	background-color: #b4b4b4;
+	/*border: black 2px solid;*/
+}
+
+.title {
+	width: 115px;
+	display: inline-block;
+	/*border: red 2px solid;*/
+	font-size: 12pt;
+	line-height: 35px;
+	padding-left: 15px;
+}
+
+.links {
+	width: 225px;
+	/*border: red 2px solid;*/
+	display: inline-block;
+	line-height: 35px;
+}
+
+.login {
+	width: 200px;
+	/*float: right;*/
+	/*border: red 2px solid;*/
+	display: inline-block;
+	float: right;
+	line-height: 35px;
+	text-align: right;
+	padding-right: 15px;
+}
+
+
+/*************
+LAYOUT
+*************/
+
+.wrapper {
+	width: 900px;
+	margin: 0 auto;
+	background-color: #f6f6ef;
+}
+
+.main {
+	margin-left: 10px;
+}
+
+.main a:visited
+{
+	color: rgb(130, 130, 130);
+} 
+
+/*************
+POSTS#Index
+*************/
+ol {
+	margin-left: 30px;
+	margin-top: 12px;
+}
+
+ol li {
+	margin-top: 10px;
+	line-height: 130%;
+
+}
+
+.toptext {
+	font-size: 7pt;
+	color: rgb(130, 130, 130);
+	margin-top: 20px;
+}
+
+.subtext {
+	font-size: 7pt;
+	color: rgb(130, 130, 130);
+	margin-top: 3px;
+}
+
+.subbody {
+	margin-top: 5px;
+}
+
+/*************
+POSTS#Show
+*************/
+h2 {
+	margin-top: 1em;
+}
+
+.para {
+	margin-top: 1em;
+	margin-bottom: 3px;
+}
+
+.post p {
+	margin-top: 20px;
+}
+
+ul {
+	margin-left: 30px;
+	margin-top: 5px;
+}
+
+.post_comments {
+	line-height: 200%;
+}
+
+.button {
+	margin-top: 10px;
+	padding-bottom: 10px;
+}
+
+
+/*************
+DEVISE
+ *************/
+.devise {
+	margin-top: 8px;
+	margin-bottom: 2px;
+}
