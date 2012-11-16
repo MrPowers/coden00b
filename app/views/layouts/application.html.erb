@@ -10,9 +10,9 @@
 	<div class="wrapper">
 		<%= render 'layouts/header' %>
 		<div class="main">
-			<p class="notice"><%= notice %></p>
-	      	<p class="alert"><%= alert %></p>
-			
+			<p class="notice"><%= flash[:notice] %></p>
+			<p class="alert"><%= flash[:alert] %></p>
+	    <p class="alert"><%= flash[:error] %></p>
 			<%= yield %>
 
 			<%= render 'layouts/footer' %>

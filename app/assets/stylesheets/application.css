@@ -85,7 +85,6 @@ ol {
 ol li {
 	margin-top: 10px;
 	line-height: 130%;
-
 }
 
 .toptext {
@@ -102,6 +101,12 @@ ol li {
 
 .subbody {
 	margin-top: 5px;
+}
+
+.short_url {
+	font-family: Verdana;
+	font-size: 7pt;
+	color: #828282;
 }
 
 /*************
