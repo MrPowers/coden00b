@@ -10,10 +10,7 @@ module PostsHelper
 	end
 
 	def post_number(counter)
-		if params[:page]
-			(params[:page].to_i - 1) * 30 + counter
-		else
-			1 * counter
-		end
+		params[:page] ||= 1
+		(params[:page].to_i - 1) * 30 + counter
 	end
 end

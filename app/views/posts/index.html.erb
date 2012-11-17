@@ -1,8 +1,6 @@
-<% counter = 1 %>
 
-<% @posts.each do |post| %>
-		<%= post_number(counter) %>
-		<% counter += 1 %>
+<% @posts.each_with_index do |post, index| %>
+		<%= post_number(index + 1) %>
 		<%= link_to post.title, post.url %>
 		<span class="short_url">
 			(<%= uri_short(post.url) %>)
