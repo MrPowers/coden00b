@@ -1,15 +1,16 @@
-<ol>
+<% counter = 1 %>
+
 <% @posts.each do |post| %>
-	<li>
+		<%= post_number(counter) %>
+		<% counter += 1 %>
 		<%= link_to post.title, post.url %>
 		<span class="short_url">
 			(<%= uri_short(post.url) %>)
 		</span>
-	</li>	
 	<p class="subtext">
 		Posted by <%= post.user[:name] %> <%= time_ago_in_words(post.updated_at) %> ago | <%=link_to "#{post.comments.size} #{comments(post)}", post %>
 	</p>
 <% end %>
-</ol>
 
-<%= paginate @posts %>
+
+<%= link_to_next_page @posts, 'More' %>
