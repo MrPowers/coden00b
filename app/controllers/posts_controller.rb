@@ -21,7 +21,10 @@ class PostsController < ApplicationController
   end
 
   def index
-  	@posts = Post.find(:all, :order => "created_at DESC")
+  	#@posts = Post.find(:all, :order => "created_at DESC").page(params[:page]).per(30)
+    # @posts = Kaminari.paginate_array(Post.all).page(params[:page])
+    @posts = Post.includes(:comments, :user).order(:created_at).reverse_order.page params[:page]
+    # @posts = Post.find(:all, :order=> 'created_at desc').page params[:page]
   end
 
   def edit

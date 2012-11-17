@@ -1,6 +1,7 @@
 require 'uri'
 
 class Post < ActiveRecord::Base
+  paginates_per 30
   attr_accessible :url, :title
   validates_presence_of :url, :title
   validate :valid_url
