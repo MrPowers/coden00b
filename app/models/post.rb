@@ -7,6 +7,7 @@ class Post < ActiveRecord::Base
   validate :valid_url
   has_many :comments
   belongs_to :user
+  acts_as_voteable
 
   private
 

@@ -12,4 +12,5 @@ class User < ActiveRecord::Base
   # attr_accessible :title, :body
   has_many :posts
   has_many :comments
+  acts_as_voter
 end

@@ -16,6 +16,10 @@
 <% else %>
   <p class="para"><%= link_to "Sign in to comment", new_user_session_path %></p>
 <% end %>
+<%= link_to image_tag("grayarrow.gif", :border=>0), vote_up_post_path(@post), :method => :post %>
+<%= link_to('upvote', vote_up_post_path(@post), :method => :post) %>
+<%= link_to image_tag("downvote_arrow.jpg", :border=>0), vote_down_post_path(@post), :method => :post %>
+<%= link_to('downvote', vote_down_post_path(@post), :method => :post) %>
 
 
 <% @comments.each do |comment| %>

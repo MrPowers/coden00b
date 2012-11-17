@@ -39,6 +39,25 @@ class PostsController < ApplicationController
 
   def delete
   	@post = Post.find(params[:id])
-  	
+  end
+
+  def vote_up
+    begin
+      current_user.vote_for(@post = Post.find(params[:id]))
+      redirect_to posts_path
+    rescue ActiveRecord::RecordInvalid
+      flash[:error] = "You cannot vote on the same post twice"
+      redirect_to posts_path
+    end
+  end
+
+  def vote_down
+    begin
+      current_user.vote_against(@post = Post.find(params[:id]))
+      redirect_to posts_path
+    rescue ActiveRecord::RecordInvalid
+      flash[:error] = "You cannot vote on the same post twice"
+      redirect_to posts_path
+    end
   end
 end

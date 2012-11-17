@@ -1,4 +1,5 @@
 AutoBlog3::Application.routes.draw do
+  root :to => 'posts#index'
   resources :comments, :only => [:index]
   resources :posts do
     resources :comments
@@ -8,7 +9,12 @@ AutoBlog3::Application.routes.draw do
      get '/users/sign_out' => 'devise/sessions#destroy'
   end
 
-  root :to => 'posts#index'
+  resources :posts do
+    member do
+      post :vote_up
+      post :vote_down
+    end
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

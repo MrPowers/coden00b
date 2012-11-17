@@ -1,6 +1,8 @@
 
 <% @posts.each_with_index do |post, index| %>
 		<%= post_number(index + 1) %>
+		<%= link_to('upvote', vote_up_post_path(post), :method => :post) %>
+		<%= link_to('downvote', vote_down_post_path(post), :method => :post) %>
 		<%= link_to post.title, post.url %>
 		<span class="short_url">
 			(<%= uri_short(post.url) %>)
@@ -8,6 +10,8 @@
 	<p class="subtext">
 		Posted by <%= post.user[:name] %> <%= time_ago_in_words(post.updated_at) %> ago | <%=link_to "#{post.comments.size} #{comments(post)}", post %>
 	</p>
+	<p>Votes for: <%= post.votes_for %></p>
+	<p>Votes against: <%= post.votes_against %></p>
 <% end %>
 
 
