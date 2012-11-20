@@ -9,7 +9,16 @@ gem 'thumbs_up'
 
 group :development, :test do
   gem 'sqlite3'
+  gem 'rspec-rails'
+  gem 'shoulda-matchers'
 end
+
+group :test do
+  gem 'spork'
+  gem 'guard-rspec'
+  gem 'guard-spork'
+end
+
 group :production do
   gem 'pg'
 end
